@@ -1,0 +1,314 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border: none;
+  outline: none
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+#root{
+  background-color: rgba(255, 224, 184, 0.523);
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+
+}
+
+.content {
+  flex: 1;
+}
+
+.content .first-container {
+  background-image: url("../src/Assets/bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.first-container,
+.second-container {
+  width: 100%;
+  height: 92vh;
+}
+
+.content-home {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+
+}
+
+.content-home p {
+  font-size: 42px;
+  font-weight: 800;
+  color: rgb(0, 0, 0);
+  letter-spacing: 10px;
+}
+
+.content-home button {
+  background-color: white;
+  color: black;
+
+}
+
+.card-container,
+.course-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 16px;
+}
+
+.card-container,
+.course-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter-container {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.filter-container input,
+select {
+  border: 1px solid;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.card,
+.card1 {
+  width: calc(33%-10px);
+  height: 40%;
+}
+
+.read-more-link {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+
+.card1 {
+  border-radius: 5px;
+  width: 300px;
+  height: 320px;
+  position: relative;
+  border: 1px solid;
+  overflow: hidden;
+}
+
+/* Add this CSS to your styles */
+.description-container {
+  width: 100%;
+  overflow-x: auto;
+  /* Enable horizontal scroll if content overflows */
+}
+
+.description {
+  white-space: nowrap;
+  /* Prevent text from wrapping */
+  overflow: hidden;
+  /* Hide overflowing content */
+  text-overflow: ellipsis;
+  /* Display ellipsis (...) for truncated text */
+  padding: 5px;
+  /* Add padding for better visibility */
+}
+
+
+.card1 .desc {
+  width: 100%;
+  height: 100%;
+  width: 100%;
+  transition: .5s;
+  padding: 10px;
+}
+
+.card1:hover .desc {
+  opacity: .5;
+  transform: translateX(30%);
+}
+
+.card1 .details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../src/assets/Images/image.png');
+  background-size: cover;
+
+  transition: 1.9s;
+  transform-origin: left;
+  transform: perspective(2000px) rotateY(-90deg);
+  border-radius: 5px;
+}
+
+.card1:hover .details {
+  transform: perspective(2000px) rotateY(0deg);
+}
+
+.card1 .details .center {
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+}
+
+.card1 .details .center h1 {
+  margin: 0;
+  padding: 0;
+  color: #ff3636;
+  line-height: 20px;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.card1 .details .center h1 span {
+  font-size: 14px;
+  color: #262626;
+}
+
+.card1 .details .center p {
+  margin: 10px 0;
+  padding: 0;
+  color: #262626;
+}
+
+.card1 .details .center ul {
+  margin: 10px auto 0;
+  padding: 0;
+  display: table;
+}
+
+.card1 .details .center ul li {
+  list-style: none;
+  margin: 0 5px;
+  float: left;
+}
+
+.card1 .details .center ul li a {
+  display: block;
+  background: #262626;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  transform: .5s;
+}
+
+.card1 .details .center ul li a:hover {
+  background: #ff3636;
+}
+
+.course-content {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.course-section {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.course-video {
+  width: 50%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media (min-width: 940px) {
+  .card {
+    width: calc(25%-10px);
+  }
+
+}
+
+.certificate {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #000;
+  text-align: center;
+}
+
+.certificate h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.certificate .content {
+  margin-bottom: 40px;
+}
+
+.certificate .content h2 {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.certificate .content h3 {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.certificate .content .date {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .course-section {
+    width: 100%;
+    /* Take full width on smaller screens */
+  }
+
+  .course-video {
+    width: 100%;
+    /* Take full width on smaller screens */
+  }
+}
