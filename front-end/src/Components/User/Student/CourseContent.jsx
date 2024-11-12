@@ -12,7 +12,7 @@ import { Button } from '@mui/material';
 const CourseContent = () => {
    const user = useContext(UserContext)
 
-   const { courseId, courseTitle } = useParams(); // Extract courseId from URL
+   const { courseId, courseTitle } = useParams(); 
    const [courseContent, setCourseContent] = useState([]);
    const [currentVideo, setCurrentVideo] = useState(null);
    const [playingSectionIndex, setPlayingSectionIndex] = useState(-1);
