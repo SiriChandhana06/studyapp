@@ -47,7 +47,7 @@ import AllCourses from '../admin/AllCourses';
 
 
 const Dashboard = () => {
-   const user = useContext(UserContext)
+   const user = useContext(UserContext);
    const [selectedComponent, setSelectedComponent] = useState('home');
 
    const renderSelectedComponent = () => {
@@ -64,9 +64,9 @@ const Dashboard = () => {
             return <AllCourses />
          default:
             return <UserHome />
-
       }
    };
+   
    return (
       <>
          <NavBar setSelectedComponent={setSelectedComponent} />

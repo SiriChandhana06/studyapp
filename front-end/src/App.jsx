@@ -7,6 +7,7 @@ import Login from "./Components/Common/Login";
 import Register from "./Components/Common/Register";
 import Dashboard from "./Components/Common/Dashboard";
 import CourseContent from "./Components/User/Student/CourseContent";
+// import AdminHome from "./Components/Admin/AdminHome";
 
 export const UserContext = createContext();
 
@@ -40,6 +41,7 @@ function App() {
               <Route exact path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              {/* <Route path="/admin" element={<AdminHome />} /> */}
               {/* <Route path="/about" element={<About />} />
             <Route path="/forgotpassword" element={<ForgotPassword />} /> */}
               {userLoggedIn ? (

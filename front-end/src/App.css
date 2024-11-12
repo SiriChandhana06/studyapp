@@ -42,7 +42,7 @@ a {
 }
 
 .content .first-container {
-  background-image: url("../src/Assets/bg.jpg");
+  background-image: url("../src/Assets/background.webp");
   background-size: cover;
   background-position: center;
 }
@@ -55,7 +55,7 @@ a {
 
 .content-home {
   position: absolute;
-  top: 30%;
+  top: 40%;
   left: 5%;
 
 }
