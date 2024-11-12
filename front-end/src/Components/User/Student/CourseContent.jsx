@@ -70,7 +70,7 @@ const CourseContent = () => {
 
             // Send a request to the server to update the user's progress
             try {
-               const res = await axiosInstance.post(`api/user/completemodule`, {
+               const res = await axiosInstance.post(`http://localhost:5000/api/user/completemodule`, {
                   courseId,
                   sectionId: sectionId
                }, {
@@ -115,7 +115,7 @@ const CourseContent = () => {
                               {section.S_description}
                               {section.S_content && (
                                  <>
-                                    <Button color='success' className='mx-2' variant="text" size="small" onClick={() => playVideo(`http://localhost:8000${section.S_content.path}`, index)}>
+                                    <Button color='success' className='mx-2' variant="text" size="small" onClick={() => playVideo(`http://localhost:5000${section.S_content.path}`, index)}>
                                        Play Video
                                     </Button>
                                     {isSectionCompleted && !completedSections.includes(index) && (

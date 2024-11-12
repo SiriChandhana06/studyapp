@@ -92,7 +92,6 @@ const getAllCoursesController = async (req, res) => {
 const postCourseController = async (req, res) => {
   try {
     let price;
-
     // Extract data from the request body and files
     const {
       userId,
@@ -101,20 +100,10 @@ const postCourseController = async (req, res) => {
       C_categories,
       C_price,
       C_description,
-      S_title = [], // Default to an empty array if undefined
-      S_description = [], // Default to an empty array if undefined
+      S_title,
+      S_description,
     } = req.body;
-
-    const S_content = req.files ? req.files.map((file) => file.filename) : []; // Check if req.files is defined
-
-    // Check if S_title, S_description, and S_content are arrays and of the same length
-    if (!Array.isArray(S_title) || !Array.isArray(S_description) || !Array.isArray(S_content)) {
-      return res.status(400).send({ success: false, message: "Invalid data format for sections" });
-    }
-    if (S_title.length !== S_description.length || S_title.length !== S_content.length) {
-      return res.status(400).send({ success: false, message: "Mismatched section data lengths" });
-    }
-
+    const S_content = req.files.map((file) => file.filename); // Assuming you want to store the filenames in S_content
     // Create an array of sections
     const sections = [];
     for (let i = 0; i < S_title.length; i++) {
@@ -127,10 +116,11 @@ const postCourseController = async (req, res) => {
         S_description: S_description[i],
       });
     }
-
-    // Determine price
-    price = C_price == 0 ? "free" : C_price;
-
+    if (C_price == 0) {
+      price = "free";
+    } else {
+      price = C_price;
+    }
     // Create an instance of the course schema
     const course = new courseSchema({
       userId,
@@ -141,16 +131,19 @@ const postCourseController = async (req, res) => {
       C_description,
       sections,
     });
-
     // Save the course instance to the database
     await course.save();
-
-    res.status(201).send({ success: true, message: "Course created successfully" });
+    res
+      .status(201)
+      .send({ success: true, message: "Course created successfully" });
   } catch (error) {
     console.error("Error creating course:", error);
-    res.status(500).send({ success: false, message: "Failed to create course" });
+    res
+      .status(500)
+      .send({ success: false, message: "Failed to create course" });
   }
 };
+
 
 
 
