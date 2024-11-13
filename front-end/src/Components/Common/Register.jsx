@@ -141,6 +141,7 @@ const Register = () => {
                         <Dropdown.Menu>
                            <Dropdown.Item onClick={() => handleSelect("Student")}>Student</Dropdown.Item>
                            <Dropdown.Item onClick={() => handleSelect("Teacher")}>Teacher</Dropdown.Item>
+                           <Dropdown.Item onClick={() => handleSelect("Admin")}>Admin</Dropdown.Item>
                         </Dropdown.Menu>
                      </Dropdown>
                      <Box mt={2}>

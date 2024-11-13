@@ -47,7 +47,7 @@ const NavBar = ({ setSelectedComponent }) => {
                   )}
                </Nav>
                <Nav>
-                  <h5 className='mx-3'>Hi {user.userData.name}</h5>
+                  <h5 className='mx-3 mt-2'>Hi {user.userData.name}</h5>
                   <Button onClick={handleLogout} size='sm' variant='outline-danger'>Log Out</Button >
                </Nav>
             </Navbar.Collapse>
