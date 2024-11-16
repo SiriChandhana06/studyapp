@@ -15,7 +15,6 @@ const AllCourses = () => {
    const [allCourses, setAllCourses] = useState([]);
    const [filterTitle, setFilterTitle] = useState('');
    const [filterType, setFilterType] = useState('');
-
    const [showModal, setShowModal] = useState(Array(allCourses.length).fill(false));
    const [cardDetails, setCardDetails] = useState({
       cardholdername: '',
@@ -34,7 +33,6 @@ const AllCourses = () => {
          handleSubmit(courseId)
          return navigate(`/courseSection/${courseId}/${courseTitle}`)
       } else {
-
          const updatedShowModal = [...showModal];
          updatedShowModal[courseIndex] = true;
          setShowModal(updatedShowModal);
@@ -72,6 +70,7 @@ const AllCourses = () => {
       return /\d/.test(course.C_price);
    };
 
+   
    const handleSubmit = async (courseId) => {
       try {
          const res = await axiosInstance.post(`http://localhost:5000/api/user/enrolledcourse/${courseId}`, cardDetails, {
@@ -107,6 +106,7 @@ const AllCourses = () => {
                <option value="Free">Free</option>
             </select>
          </div>
+
          <div className='p-2 course-container'>
             {allCourses?.length > 0 ? (
                allCourses

@@ -110,16 +110,18 @@ const AddCourse = () => {
             <Row className="mb-3">
                <Form.Group as={Col} controlId="formGridJobType">
                   <Form.Label>Course Type</Form.Label>
+
                   <Form.Select value={addCourse.C_categories} onChange={handleCourseTypeChange}>
                      <option>Select categories</option>
                      <option>IT & Software</option>
                      <option>Finance & Accounting</option>
                      <option>Personal Development</option>
-                  </Form.Select>
+                  </Form.Select>   
+                  
                </Form.Group>
                <Form.Group as={Col} controlId="formGridTitle">
                   <Form.Label>Course Title</Form.Label>
-                  <Form.Control name='C_title' value={addCourse.C_title} onChange={handleChange} type="text" placeholder="Enter Course Title" required />
+                  <Form.Control className='mt-2' name='C_title' value={addCourse.C_title} onChange={handleChange} type="text" placeholder="Enter Course Title" required />
                </Form.Group>
             </Row>
 

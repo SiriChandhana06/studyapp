@@ -19,7 +19,7 @@ const CourseContent = () => {
    const [completedSections, setCompletedSections] = useState([]);
    const [completedModule, setCompletedModule] = useState([]);
    const [showModal, setShowModal] = useState(false);
-   const [certificate, setCertificate] = useState(null)
+   const [certificate, setCertificate] = useState(null);
    // Extract sectionIds from completedModule
    const completedModuleIds = completedModule.map((item) => item.sectionId);
 
